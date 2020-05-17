@@ -24,6 +24,15 @@ export default class SignIn extends Component {
     });    
   }
 
+  // signOut() {
+  //   gapi.load('auth2', () => {
+  //     var auth2 = gapi.auth2.getAuthInstance();
+  //     auth2.signOut().then(function () {
+  //       console.log('User signed out.');
+  //     });
+  //   });
+  // }
+
   /* 
   Each data.feed.entry object has the following structure
   -category: UNK
@@ -74,8 +83,9 @@ export default class SignIn extends Component {
 
   render() {
     return (
-      <div className="signin-button">
-        <button onClick={this.auth}>Sign In</button>
+      <div className="signin-div">
+        <button className="signin-button" onClick={this.auth}>Sign In</button>
+        <button className="signout-button" onClick={this.signOut}>Sign Out</button>
       </div>
     );
   }

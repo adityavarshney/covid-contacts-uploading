@@ -17,6 +17,9 @@ export default class Search extends Component {
   uploadContacts = () => {
     console.log(this.state.selectedValues.map((e) => e.value));
     alert('Contacts uploaded!');
+    this.setState({
+      selectedValues: []
+    })
   }
 
   optionChanged = value => {
@@ -47,7 +50,7 @@ export default class Search extends Component {
       console.log('no props');
       return (
         <div>
-          <h1>No props</h1>
+          <h1>Sign in to get started!</h1>
         </div>
       );
     }
