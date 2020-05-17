@@ -85,7 +85,7 @@ export default class SignIn extends Component {
     return (
       <div className="signin-div">
         <button className="signin-button" onClick={this.auth}>Sign In</button>
-        <button className="signout-button" onClick={this.signOut}>Sign Out</button>
+        {/* <button className="signout-button" onClick={this.signOut}>Sign Out</button> */}
       </div>
     );
   }
