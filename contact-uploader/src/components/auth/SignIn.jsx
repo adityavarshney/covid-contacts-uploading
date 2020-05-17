@@ -54,7 +54,7 @@ export default class SignIn extends Component {
               var name = e.title.$t;
               var last_updated = e.updated.$t;
               let obj = {
-                'name': name + " " + email, // Search.jsx requires this structure
+                'label': name + " " + email, // Search.jsx requires this structure
                 'value': name + " " + email + " " + last_updated,
               }
               return obj;
@@ -75,7 +75,7 @@ export default class SignIn extends Component {
   render() {
     return (
       <div className="signin-button">
-        <button onClick={this.auth}>Upload Contacts</button>
+        <button onClick={this.auth}>Sign In</button>
       </div>
     );
   }
