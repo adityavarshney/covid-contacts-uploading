@@ -4,33 +4,7 @@
     <meta charset="utf-8" />
     <script src="https://apis.google.com/js/client.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script>
-      function auth() {
-        var config = {
-          'client_id': '773394140660-0i7c36bp68h6ia9qu7vugrpeoti1b8n1.apps.googleusercontent.com',
-          'scope': 'https://www.google.com/m8/feeds'
-        };
-        gapi.auth.authorize(config, function() {
-          fetch(gapi.auth.getToken());
-        });
-      }
-
-      function fetch(token) {
-          var nresults = 1000;
-          token['g-oauth-window'] = null;
-          $.ajax({
-              url: 'https://www.google.com/m8/feeds/contacts/default/full?alt=json&max-results=' + nresults,
-              dataType: 'json',
-              data: token
-          }).done(function(data) {
-            // Object.keys(data).forEach(function(key) {console.log([key]);});
-            data.feed.entry.forEach(function(e) {
-              if (e.gd$email)
-                  console.log(e.gd$email[0].address);
-            });
-          });
-      }
-    </script>
+    <script src="google-auth-handler.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
